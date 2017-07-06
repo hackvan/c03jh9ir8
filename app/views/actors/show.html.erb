@@ -12,7 +12,7 @@
   <tbody>
     <% @actors.each do |actor| %>
       <tr>
-        <td><%= image_tag actor.image_url, alt: "Foto", :title => "Foto"%></td>
+        <td><%= image_tag actor.image_url, alt: "Foto", :title => "Foto" unless actor.image_url.blank?%></td>
         <td><%= actor.name %></td>
         <td><%= actor.bio %></td>
         <td><%= actor.birth_date %></td>
