@@ -17,8 +17,13 @@
         <td><%= actor.bio %></td>
         <td><%= actor.birth_date %></td>
         <td><%= actor.birth_place %></td>
-        <td><%= actor.death_date %></td>
-        <td><%= actor.death_place %></td>
+        <% if actor.death_date %>
+          <td><%= actor.death_date %></td>
+          <td><%= actor.death_place %></td>
+        <% else %>
+          <td>N/A</td>
+          <td>N/A</td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
