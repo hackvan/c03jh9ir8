@@ -5,13 +5,13 @@ class ActorsController < ApplicationController
   def create
     @actor = Actor.new(actor_params)
     if @actor.save
-      redirect_to action: "show"
+      redirect_to action: "index"
     else
       render :new
     end
   end
 
-  def show
+  def index
     @actors = Actor.all
   end
 
