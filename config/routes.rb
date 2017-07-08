@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # resources :actors, only: [:index, :new, :create]
   get  '/actors',     to: 'actors#index'
   get  '/actors/new', to: 'actors#new', as: :new_actor
   post '/actors',     to: 'actors#create'
