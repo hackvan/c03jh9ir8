@@ -3,9 +3,9 @@ class ActorsController < ApplicationController
   end
 
   def create
-    @actor = Actor.new(actor_params)
-    if @actor.save
-      redirect_to action: "index"
+    actor = Actor.new(actor_params)
+    if actor.save
+      redirect_to actors_path, notice: "El actor fue creado con éxito"
     else
       render :new
     end
@@ -16,6 +16,7 @@ class ActorsController < ApplicationController
   end
 
   private
+  # Strong parameters:
   def actor_params
     params.require(:actor).permit(:name, :bio, :birth_date, :birth_place, :image_url)
   end
